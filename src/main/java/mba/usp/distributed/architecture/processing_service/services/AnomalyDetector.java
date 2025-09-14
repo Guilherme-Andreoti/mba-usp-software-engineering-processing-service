@@ -1,6 +1,6 @@
-package mba.usp.distributed.architecture.processing_service.service;
+package mba.usp.distributed.architecture.processing_service.services;
 
-import mba.usp.distributed.architecture.processing_service.model.SensorData;
+import mba.usp.distributed.architecture.processing_service.dtos.SensorData;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

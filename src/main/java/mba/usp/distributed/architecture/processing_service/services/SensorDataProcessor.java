@@ -1,6 +1,6 @@
-package mba.usp.distributed.architecture.processing_service.service;
+package mba.usp.distributed.architecture.processing_service.services;
 
-import mba.usp.distributed.architecture.processing_service.model.SensorData;
+import mba.usp.distributed.architecture.processing_service.dtos.SensorData;
 import mba.usp.distributed.architecture.processing_service.messaging.ProcessedDataPublisher;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class SensorDataProcessor {
 
         List<String> anomalies = this.anomalyDetector.detect(data);
 
-        if (!anomalies.isEmpty())  anomalies.forEach(anomaly -> {notificationHandler.sendNotification(anomaly,data.getDateTime(),data.getTopic());});
+        if (!anomalies.isEmpty())  anomalies.forEach(anomaly -> {notificationHandler.sendNotification(data.getId(),anomaly,data.getDateTime(),data.getTopic(),data.getStartProcessingTimestamp());});
 
         processedDataPublisher.publish(data);
     }

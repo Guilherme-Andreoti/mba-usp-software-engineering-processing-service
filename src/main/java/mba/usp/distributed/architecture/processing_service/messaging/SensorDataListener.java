@@ -1,8 +1,8 @@
 package mba.usp.distributed.architecture.processing_service.messaging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import mba.usp.distributed.architecture.processing_service.model.SensorData;
-import mba.usp.distributed.architecture.processing_service.service.SensorDataProcessor;
+import mba.usp.distributed.architecture.processing_service.dtos.SensorData;
+import mba.usp.distributed.architecture.processing_service.services.SensorDataProcessor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 

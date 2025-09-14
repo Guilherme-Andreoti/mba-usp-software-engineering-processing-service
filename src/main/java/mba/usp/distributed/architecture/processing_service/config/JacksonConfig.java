@@ -2,7 +2,7 @@ package mba.usp.distributed.architecture.processing_service.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import mba.usp.distributed.architecture.processing_service.model.SensorData;
+import mba.usp.distributed.architecture.processing_service.dtos.SensorData;
 import org.springframework.amqp.support.converter.DefaultClassMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
 package mba.usp.distributed.architecture.processing_service.messaging;
 
-import mba.usp.distributed.architecture.processing_service.model.SensorData;
+import mba.usp.distributed.architecture.processing_service.dtos.SensorData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 

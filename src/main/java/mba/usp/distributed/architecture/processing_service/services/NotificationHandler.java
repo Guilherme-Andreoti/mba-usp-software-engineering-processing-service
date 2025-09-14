@@ -1,7 +1,7 @@
-package mba.usp.distributed.architecture.processing_service.service;
+package mba.usp.distributed.architecture.processing_service.services;
 
 import mba.usp.distributed.architecture.processing_service.messaging.NotificationDataPublisher;
-import mba.usp.distributed.architecture.processing_service.model.Notification;
+import mba.usp.distributed.architecture.processing_service.dtos.Notification;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -15,11 +15,13 @@ public class NotificationHandler {
         this.publisher = publisher;
     }
 
-    public void sendNotification(String message, LocalDateTime datetime, String sensor){
+    public void sendNotification(String id, String message, LocalDateTime datetime, String sensor,long startProcessingTimestamp){
         this.publisher.publish(new Notification(
+                id,
                 message,
                 datetime,
-                sensor
+                sensor,
+                startProcessingTimestamp
         ));
 
     }
